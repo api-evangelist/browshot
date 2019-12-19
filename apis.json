@@ -1,0 +1,82 @@
+{
+    "name": "Browshot",
+    "description": "Browshot is a service to take screenshot of web pages. Use any of our mobile and desktop browsers. We provide a powerful API and libraries.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/717-browshot-com.jpg",
+    "tags": [
+        "api provider",
+        "have api",
+        "screenshots",
+        "service api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/browshot\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Browshot",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/717-browshot-com.jpg",
+            "humanURL": "http:\/\/browshot.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/browshot-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/browshot.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/browshot-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Website",
+            "url": "http:\/\/browshot.com\/"
+        },
+        {
+            "type": "Base",
+            "url": "https:\/\/api.browshot.com\/api\/"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.browshot.com\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/blog.browshot.com\/feeds\/posts\/default"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/browshot"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/browshot"
+        },
+        {
+            "type": "Developers",
+            "url": "http:\/\/browshot.com\/api\/documentation"
+        },
+        {
+            "type": "Email",
+            "url": "feedback@browshot.com"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/BrowshotCom"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/browshot.com"
+        }
+    ]
+}
