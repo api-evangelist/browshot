@@ -1,0 +1,1124 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.17.0",
+        "title": "Browshot",
+        "description": "Take screenshots of any website in real time",
+        "termsOfService": "https:\/\/browshot.com\/terms"
+    },
+    "servers": [
+        "httpsapi.browshot.com\/api\/v1"
+    ],
+    "paths": {
+        "\/account\/info": {
+            "get": {
+                "summary": "Get information about your account",
+                "description": "Get information about your account.",
+                "operationId": "GetAccountInfo",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "details",
+                        "in": "query",
+                        "description": "level of information returned"
+                    }
+                ]
+            }
+        },
+        "\/batch\/ceate": {
+            "post": {
+                "summary": "Requests thousands of screenshtos at once",
+                "description": "Get hundreds or thousands of screenshots from a text file. You can use this API call or the dashboard. Unlike the other API calls, you must issue a POST request with the Content-Type \"multipart\/form-data\" in order to upload the text file. The text file must contain the list of URLs to request, 1 URL per line. Failed screenshots will be tried up to 3 times before giving up.\n",
+                "operationId": "CreateBatch",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "instance_id",
+                        "in": "formData",
+                        "description": "instance ID to use"
+                    },
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "description": "text file to use"
+                    },
+                    {
+                        "name": "size",
+                        "in": "formData",
+                        "description": "screenshots size - \"screen\" (default) or \"page\""
+                    },
+                    {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "name of the batch"
+                    },
+                    {
+                        "name": "width",
+                        "in": "formData",
+                        "description": "thumbnail width."
+                    },
+                    {
+                        "name": "height",
+                        "in": "formData",
+                        "description": "thumbnail height"
+                    },
+                    {
+                        "name": "delay",
+                        "in": "formData",
+                        "description": "number of seconds to wait after the page has loaded. This is used to let JavaScript run longer before taking the screenshot. Use delay=0 to take screenshots faster."
+                    },
+                    {
+                        "name": "flash_delay",
+                        "in": "formData",
+                        "description": "number of seconds to wait after the page has loaded if Flash elements are present. Use flash_delay=0 to take screenshots faster."
+                    },
+                    {
+                        "name": "screen_width",
+                        "in": "formData",
+                        "description": "width of the browser window. For desktop browsers only."
+                    },
+                    {
+                        "name": "screen_height",
+                        "in": "formData",
+                        "description": "height of the browser window. For desktop browsers only. (Note: full-page screenshots can have a height of up to 15,000px)"
+                    },
+                    {
+                        "name": "priority",
+                        "in": "formData",
+                        "description": "assign priority to the screenshot (for private instances only)"
+                    },
+                    {
+                        "name": "referer",
+                        "in": "formData",
+                        "description": "use a custom referrer header - paid screenshots only"
+                    },
+                    {
+                        "name": "post_data",
+                        "in": "formData",
+                        "description": "send a POST requests with post_data, useful for filling out forms - paid screenshots only"
+                    },
+                    {
+                        "name": "cookie",
+                        "in": "formData",
+                        "description": "set a cookie for the URL requested (see Custom POST Data, Referer and Cookie) Cookies should be separated by a ; - paid screenshots only"
+                    },
+                    {
+                        "name": "script",
+                        "in": "formData",
+                        "description": "URL of javascript file to execute after the page load event"
+                    },
+                    {
+                        "name": "details",
+                        "in": "formData",
+                        "description": "level of information available with screenshot\/info"
+                    },
+                    {
+                        "name": "html",
+                        "in": "formData",
+                        "description": "saves the HTML of the rendered page which can be retrieved by the API call screenshot\/html. This feature costs *1 credit* per screenshot."
+                    },
+                    {
+                        "name": "max_wait",
+                        "in": "formData",
+                        "description": "maximum number of seconds to wait before triggering the PageLoad event. Note that delay will still be used. (default: 0 = disabled)"
+                    },
+                    {
+                        "name": "headers",
+                        "in": "formData",
+                        "description": "any custom HTTP headers. (Not supported with Internet Explorer)"
+                    },
+                    {
+                        "name": "format",
+                        "in": "formData",
+                        "description": "image as PNG or JPEG"
+                    },
+                    {
+                        "name": "hosting",
+                        "in": "query",
+                        "description": "hosting option - s3 or browshot"
+                    },
+                    {
+                        "name": "hosting_height",
+                        "in": "query",
+                        "description": "maximum height of the thumbnail to host"
+                    },
+                    {
+                        "name": "hosting_width",
+                        "in": "query",
+                        "description": "maximum height of the thumbnail to host"
+                    },
+                    {
+                        "name": "hosting_scale",
+                        "in": "query",
+                        "description": "scale of the thumbnail to host"
+                    },
+                    {
+                        "name": "hosting_bucket",
+                        "in": "query",
+                        "description": "S3 bucket to upload the screenshot or thumbnail (required for S3)"
+                    },
+                    {
+                        "name": "hosting_file",
+                        "in": "query",
+                        "description": "file name to use (for S3 only)"
+                    },
+                    {
+                        "name": "hosting_headers",
+                        "in": "query",
+                        "description": "list of headers to add to the S3 object (for S3 only)"
+                    }
+                ]
+            }
+        },
+        "\/batch\/info": {
+            "get": {
+                "summary": "Get the batch status",
+                "description": "Get the status of a batch requested through the API or through the dashboard.\n",
+                "operationId": "GetBatchInfo",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "batch ID"
+                    }
+                ]
+            }
+        },
+        "\/browser\/info": {
+            "get": {
+                "summary": "Get information about a browser",
+                "description": "Get information about a browser.",
+                "operationId": "GetBrowserInfo",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "batch ID"
+                    }
+                ]
+            }
+        },
+        "\/browser\/list": {
+            "get": {
+                "summary": "Get all browsers",
+                "description": "Get all browsers.",
+                "operationId": "GetBrowsersInfo",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/instance\/info": {
+            "get": {
+                "summary": "Get information about an instance",
+                "description": "Get information about an instance.",
+                "operationId": "GetInstanceInfo",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "batch ID"
+                    }
+                ]
+            }
+        },
+        "\/instance\/list": {
+            "get": {
+                "summary": "Get all instances",
+                "description": "Get all instances.",
+                "operationId": "GetInstancesInfo",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/screenshot\/create": {
+            "get": {
+                "summary": "Request a screenshot",
+                "description": "Screenshots requests to private and shared instances require a positive balance.\n\n*IMPORTANT*: Remember that you can only do 100 free screenshots per month. To used a premium instance, use instance_id=65 for example.\n",
+                "operationId": "CreateScreenshot",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "URL of the page to get a screenshot for"
+                    },
+                    {
+                        "name": "instance_id",
+                        "in": "query",
+                        "description": "instance ID to use"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "screenshot size - \"screen\" (default) or \"page\""
+                    },
+                    {
+                        "name": "cache",
+                        "in": "query",
+                        "description": "use a previous screenshot (same URL, same instance) if it was done within <cache_value> seconds. The default value is 24hours. Specify cache=0 if you want a new screenshot."
+                    },
+                    {
+                        "name": "delay",
+                        "in": "query",
+                        "description": "number of seconds to wait after the page has loaded. This is used to let JavaScript run longer before taking the screenshot. Use delay=0 to take screenshots faster."
+                    },
+                    {
+                        "name": "flash_delay",
+                        "in": "query",
+                        "description": "number of seconds to wait after the page has loaded if Flash elements are present. Use flash_delay=0 to take screenshots faster."
+                    },
+                    {
+                        "name": "screen_width",
+                        "in": "query",
+                        "description": "width of the browser window. For desktop browsers only."
+                    },
+                    {
+                        "name": "screen_height",
+                        "in": "query",
+                        "description": "height of the browser window. For desktop browsers only. (Note: full-page screenshots can have a height of up to 15,000px)"
+                    },
+                    {
+                        "name": "priority",
+                        "in": "query",
+                        "description": "assign priority to the screenshot (for private instances only)"
+                    },
+                    {
+                        "name": "referer",
+                        "in": "query",
+                        "description": "use a custom referrer header - paid screenshots only"
+                    },
+                    {
+                        "name": "post_data",
+                        "in": "query",
+                        "description": "send a POST requests with post_data, useful for filling out forms - paid screenshots only"
+                    },
+                    {
+                        "name": "cookie",
+                        "in": "query",
+                        "description": "set a cookie for the URL requested (see Custom POST Data, Referer and Cookie) Cookies should be separated by a ; - paid screenshots only"
+                    },
+                    {
+                        "name": "script",
+                        "in": "query",
+                        "description": "URL of javascript file to execute after the page load event"
+                    },
+                    {
+                        "name": "details",
+                        "in": "query",
+                        "description": "level of information returned"
+                    },
+                    {
+                        "name": "html",
+                        "in": "query",
+                        "description": "saves the HTML of the rendered page which can be retrieved by the API call screenshot\/html. This feature costs *1 credit* per screenshot."
+                    },
+                    {
+                        "name": "max_wait",
+                        "in": "query",
+                        "description": "maximum number of seconds to wait before triggering the PageLoad event. Note that delay will still be used. (default: 0 = disabled)"
+                    },
+                    {
+                        "name": "headers",
+                        "in": "query",
+                        "description": "any custom HTTP headers. (Not supported with Internet Explorer)"
+                    },
+                    {
+                        "name": "shots",
+                        "in": "query",
+                        "description": "take multiple screenshots of the same page. This costs 1 additional credit for every 2 additional screenshots."
+                    },
+                    {
+                        "name": "shot_interval",
+                        "in": "query",
+                        "description": "number of seconds between 2 screenshots"
+                    },
+                    {
+                        "name": "hosting",
+                        "in": "query",
+                        "description": "hosting option - s3 or browshot"
+                    },
+                    {
+                        "name": "hosting_height",
+                        "in": "query",
+                        "description": "maximum height of the thumbnail to host"
+                    },
+                    {
+                        "name": "hosting_width",
+                        "in": "query",
+                        "description": "maximum height of the thumbnail to host"
+                    },
+                    {
+                        "name": "hosting_scale",
+                        "in": "query",
+                        "description": "scale of the thumbnail to host"
+                    },
+                    {
+                        "name": "hosting_bucket",
+                        "in": "query",
+                        "description": "S3 bucket to upload the screenshot or thumbnail (required for S3)"
+                    },
+                    {
+                        "name": "hosting_file",
+                        "in": "query",
+                        "description": "file name to use (for S3 only)"
+                    },
+                    {
+                        "name": "hosting_headers",
+                        "in": "query",
+                        "description": "list of headers to add to the S3 object (for S3 only)"
+                    }
+                ]
+            }
+        },
+        "\/screenshot\/delete": {
+            "get": {
+                "summary": "Delete screenshot data",
+                "description": "You can delete details of your screenshots to remove any confidential information.\n",
+                "operationId": "DeleteScreenshot",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "batch ID"
+                    },
+                    {
+                        "name": "data",
+                        "in": "query",
+                        "description": "data to remove. You can specify multiple of them (separated by a ,): *image* (image files), *url* (url requested), *metadata* (time added, time finished, post data, cookie and referer used for the screenshot), *all* (all data and files)\n"
+                    }
+                ]
+            }
+        },
+        "\/screenshot\/host": {
+            "get": {
+                "summary": "Host thumbnails on your own S3 account or on Browshot.",
+                "description": "You can host screenshots and thumbnails on your own S3 account or on Browshot.",
+                "operationId": "HostScreenshot",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "batch ID"
+                    },
+                    {
+                        "name": "hosting",
+                        "in": "query",
+                        "description": "hosting option - s3 or browshot"
+                    },
+                    {
+                        "name": "width",
+                        "in": "query",
+                        "description": "width of the thumbnail"
+                    },
+                    {
+                        "name": "height",
+                        "in": "query",
+                        "description": "height of the thumbnail"
+                    },
+                    {
+                        "name": "scale",
+                        "in": "query",
+                        "description": "scale of the thumbnail"
+                    },
+                    {
+                        "name": "bucket",
+                        "in": "query",
+                        "description": "S3 bucket to upload the screenshot or thumbnail - required with hosting=s3"
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "description": "file name to use - optional, used with hosting=s3"
+                    },
+                    {
+                        "name": "headers",
+                        "in": "query",
+                        "description": "any custom HTTP headers. (Not supported with Internet Explorer)"
+                    }
+                ]
+            }
+        },
+        "\/screenshot\/html": {
+            "get": {
+                "summary": "Get the HTML code",
+                "description": "Retrieve the HTML code of the rendered page. This API call should be used when html=1 was specified in the screenshot request.\n",
+                "operationId": "GetHTML",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "batch ID"
+                    }
+                ]
+            }
+        },
+        "\/screenshot\/info": {
+            "get": {
+                "summary": "Query screenshot status",
+                "description": "Once a screenshot has been requested, its status must be checked until it is either \"error\" or \"finished\".",
+                "operationId": "GetScreenshotInfo",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "batch ID"
+                    },
+                    {
+                        "name": "details",
+                        "in": "query",
+                        "description": "level of information returned"
+                    }
+                ]
+            }
+        },
+        "\/screenshot\/list": {
+            "get": {
+                "summary": "Get information about screenshots",
+                "description": "Get information about the last 100 screenshots requested.",
+                "operationId": "GetMultipleScreenshotsInfo",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "maximum number of screenshots' information to return"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "get list of screenshot in a given status (error, finished, in_process)"
+                    }
+                ]
+            }
+        },
+        "\/screenshot\/multiple": {
+            "get": {
+                "summary": "Request multiple screenshots",
+                "description": "Request multiple screenshots in one API call. The API call accepts all the parameters supported by screenshot\/create.\nYou can specify up to 10 URLs and 10 instances for a total of 100 screenshots in one API call.\n",
+                "operationId": "CreateMultipleScreenshots",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "URL of the page to get a screenshot for"
+                    },
+                    {
+                        "name": "instance_id",
+                        "in": "query",
+                        "description": "instance ID to use"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "screenshot size - \"screen\" (default) or \"page\""
+                    },
+                    {
+                        "name": "cache",
+                        "in": "query",
+                        "description": "use a previous screenshot (same URL, same instance) if it was done within <cache_value> seconds. The default value is 24hours. Specify cache=0 if you want a new screenshot."
+                    },
+                    {
+                        "name": "delay",
+                        "in": "query",
+                        "description": "number of seconds to wait after the page has loaded. This is used to let JavaScript run longer before taking the screenshot. Use delay=0 to take screenshots faster."
+                    },
+                    {
+                        "name": "flash_delay",
+                        "in": "query",
+                        "description": "number of seconds to wait after the page has loaded if Flash elements are present. Use flash_delay=0 to take screenshots faster."
+                    },
+                    {
+                        "name": "screen_width",
+                        "in": "query",
+                        "description": "width of the browser window. For desktop browsers only."
+                    },
+                    {
+                        "name": "screen_height",
+                        "in": "query",
+                        "description": "height of the browser window. For desktop browsers only. (Note: full-page screenshots can have a height of up to 15,000px)"
+                    },
+                    {
+                        "name": "priority",
+                        "in": "query",
+                        "description": "assign priority to the screenshot (for private instances only)"
+                    },
+                    {
+                        "name": "referer",
+                        "in": "query",
+                        "description": "use a custom referrer header - paid screenshots only"
+                    },
+                    {
+                        "name": "post_data",
+                        "in": "query",
+                        "description": "send a POST requests with post_data, useful for filling out forms - paid screenshots only"
+                    },
+                    {
+                        "name": "cookie",
+                        "in": "query",
+                        "description": "set a cookie for the URL requested (see Custom POST Data, Referer and Cookie) Cookies should be separated by a ; - paid screenshots only"
+                    },
+                    {
+                        "name": "script",
+                        "in": "query",
+                        "description": "URL of javascript file to execute after the page load event"
+                    },
+                    {
+                        "name": "details",
+                        "in": "query",
+                        "description": "level of information returned"
+                    },
+                    {
+                        "name": "html",
+                        "in": "query",
+                        "description": "saves the HTML of the rendered page which can be retrieved by the API call screenshot\/html. This feature costs *1 credit* per screenshot."
+                    },
+                    {
+                        "name": "max_wait",
+                        "in": "query",
+                        "description": "maximum number of seconds to wait before triggering the PageLoad event. Note that delay will still be used. (default: 0 = disabled)"
+                    },
+                    {
+                        "name": "headers",
+                        "in": "query",
+                        "description": "any custom HTTP headers. (Not supported with Internet Explorer)"
+                    },
+                    {
+                        "name": "hosting",
+                        "in": "query",
+                        "description": "hosting option - s3 or browshot"
+                    },
+                    {
+                        "name": "hosting_height",
+                        "in": "query",
+                        "description": "maximum height of the thumbnail to host"
+                    },
+                    {
+                        "name": "hosting_width",
+                        "in": "query",
+                        "description": "maximum height of the thumbnail to host"
+                    },
+                    {
+                        "name": "hosting_scale",
+                        "in": "query",
+                        "description": "scale of the thumbnail to host"
+                    },
+                    {
+                        "name": "hosting_bucket",
+                        "in": "query",
+                        "description": "S3 bucket to upload the screenshot or thumbnail (required for S3)"
+                    },
+                    {
+                        "name": "hosting_file",
+                        "in": "query",
+                        "description": "file name to use (for S3 only)"
+                    },
+                    {
+                        "name": "hosting_headers",
+                        "in": "query",
+                        "description": "list of headers to add to the S3 object (for S3 only)"
+                    }
+                ]
+            }
+        },
+        "\/screenshot\/search": {
+            "get": {
+                "summary": "Search for screenshots",
+                "description": "Search for screenshots of a specific URL.",
+                "operationId": "SearchScreenshot",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "url",
+                        "in": "query",
+                        "description": "URL of the page to get a screenshot for"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "maximum number of screenshots' information to return"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "get list of screenshot in a given status (error, finished, in_process)"
+                    }
+                ]
+            }
+        },
+        "\/screenshot\/share": {
+            "get": {
+                "summary": "Share a screenshot",
+                "description": "You can make your screenshots public, add notes, and share it with your friends and colleagues. Only screenshots which are successfully completed can be shared.n the thumbnail. You can take a 1024x768 screenshot, crop it to 768x768, and get it scaled down to 300x300.\n",
+                "operationId": "ShareScreenshot",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "batch ID"
+                    },
+                    {
+                        "name": "note",
+                        "in": "query",
+                        "description": "note to add on the sharing page"
+                    }
+                ]
+            }
+        },
+        "\/screenshot\/thumbnail": {
+            "get": {
+                "summary": "Retrieve a thumbnail image",
+                "description": "Unlike the other API calls, this API sends back the thumbnail as a PNG file, not JSON. The HTTP response code indicates whether the screenshot was successful (200), or incomplete (404) or failed (404). If the screenshot failed or is not finished, a default image \"Not found\" is sent.\n\nYou can crop your screenshots. The crop is done first, then the thumbnail. You can take a 1024x768 screenshot, crop it to 768x768, and get it scaled down to 300x300.\n",
+                "operationId": "GetThumbnail",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "batch ID"
+                    },
+                    {
+                        "name": "width",
+                        "in": "query",
+                        "description": "width of the thumbnail"
+                    },
+                    {
+                        "name": "height",
+                        "in": "query",
+                        "description": "height of the thumbnail"
+                    },
+                    {
+                        "name": "scale",
+                        "in": "query",
+                        "description": "scale of the thumbnail"
+                    },
+                    {
+                        "name": "zoom",
+                        "in": "query",
+                        "description": "zoom 1 to 100 percent"
+                    },
+                    {
+                        "name": "ratio",
+                        "in": "query",
+                        "description": "Use fit to keep the original page ration, and fill to get a thumbnail for the exact width and height.  specified. If you provide both width and height, you need to specify the ratio: fit to keep the original width\/height ratio (the thumbnail might be smaller than the specified width and height), or fill to crop the image if necessary."
+                    },
+                    {
+                        "name": "left",
+                        "in": "query",
+                        "description": "left edge of the area to be cropped"
+                    },
+                    {
+                        "name": "right",
+                        "in": "query",
+                        "description": "right edge of the area to be cropped"
+                    },
+                    {
+                        "name": "top",
+                        "in": "query",
+                        "description": "top edge of the area to be cropped"
+                    },
+                    {
+                        "name": "bottom",
+                        "in": "query",
+                        "description": "bottom edge of the area to be cropped"
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "image as PNG or JPEG"
+                    },
+                    {
+                        "name": "shot",
+                        "in": "query",
+                        "description": "get the second or third screenshot if multiple screenshots were requested"
+                    },
+                    {
+                        "name": "quality",
+                        "in": "query",
+                        "description": "JPEG quality factor (for JPEG thumbnails only)"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "balance": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "browsers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "free_screenshots_left": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "hosting_browshot": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "instances": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "private_instances": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "screenshots": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AccountError": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Batch": {
+                "type": "object",
+                "properties": {
+                    "count": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "failed": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "finished": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "processed": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "started": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "urls": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "BatchError": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Browser": {
+                "type": "object",
+                "properties": {
+                    "flash": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "javascript": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "mobile": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "BrowserError": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "BrowserList": {
+                "type": "object",
+                "properties": {
+                    "default": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Instance": {
+                "type": "object",
+                "properties": {
+                    "country": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "load": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "screenshot_cost": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "width": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "InstanceError": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "InstanceList": {
+                "type": "object",
+                "properties": {
+                    "free": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "private": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "shared": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Screenshot": {
+                "type": "object",
+                "properties": {
+                    "cookie": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "cost": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "delay": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "details": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "final_url": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "flash_delay": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "height": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "instance_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "post_data": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "priority": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "referer": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "scale": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "script": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "shared_url": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "size": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "width": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ScreenshotError": {
+                "type": "object",
+                "properties": {
+                    "cost": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "priority": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ScreenshotHost": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ScreenshotInfoError": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ScreenshotList": {
+                "type": "object",
+                "properties": {
+                    "default": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ScreenshotShort": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
