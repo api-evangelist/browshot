@@ -1,0 +1,1217 @@
+{
+    "id": "1102c340609cb881e08b6e50be693ab7",
+    "name": "Browshot",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "da273d7e372f3c7f86ffee2eaf6f1426",
+            "name": "Get information about your account",
+            "url": "httpsapi.browshot.com\/api\/v1\/account\/info",
+            "description": "Get information about your account.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "details",
+                    "description": "level of information returned",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "ae11ba521e0bde4afd2ce1566ec44561",
+            "name": "Requests thousands of screenshtos at once",
+            "url": "httpsapi.browshot.com\/api\/v1\/batch\/ceate",
+            "description": "Get hundreds or thousands of screenshots from a text file. You can use this API call or the dashboard. Unlike the other API calls, you must issue a POST request with the Content-Type \"multipart\/form-data\" in order to upload the text file. The text file must contain the list of URLs to request, 1 URL per line. Failed screenshots will be tried up to 3 times before giving up.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "instance_id",
+                    "description": "instance ID to use",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "file",
+                    "description": "text file to use",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "size",
+                    "description": "screenshots size - \"screen\" (default) or \"page\"",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "name",
+                    "description": "name of the batch",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "width",
+                    "description": "thumbnail width.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "height",
+                    "description": "thumbnail height",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "delay",
+                    "description": "number of seconds to wait after the page has loaded. This is used to let JavaScript run longer before taking the screenshot. Use delay=0 to take screenshots faster.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "flash_delay",
+                    "description": "number of seconds to wait after the page has loaded if Flash elements are present. Use flash_delay=0 to take screenshots faster.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "screen_width",
+                    "description": "width of the browser window. For desktop browsers only.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "screen_height",
+                    "description": "height of the browser window. For desktop browsers only. (Note: full-page screenshots can have a height of up to 15,000px)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "priority",
+                    "description": "assign priority to the screenshot (for private instances only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "referer",
+                    "description": "use a custom referrer header - paid screenshots only",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "post_data",
+                    "description": "send a POST requests with post_data, useful for filling out forms - paid screenshots only",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cookie",
+                    "description": "set a cookie for the URL requested (see Custom POST Data, Referer and Cookie) Cookies should be separated by a ; - paid screenshots only",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "script",
+                    "description": "URL of javascript file to execute after the page load event",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "details",
+                    "description": "level of information available with screenshot\/info",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "html",
+                    "description": "saves the HTML of the rendered page which can be retrieved by the API call screenshot\/html. This feature costs *1 credit* per screenshot.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_wait",
+                    "description": "maximum number of seconds to wait before triggering the PageLoad event. Note that delay will still be used. (default: 0 = disabled)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "headers",
+                    "description": "any custom HTTP headers. (Not supported with Internet Explorer)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "format",
+                    "description": "image as PNG or JPEG",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting",
+                    "description": "hosting option - s3 or browshot",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_height",
+                    "description": "maximum height of the thumbnail to host",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_width",
+                    "description": "maximum height of the thumbnail to host",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_scale",
+                    "description": "scale of the thumbnail to host",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_bucket",
+                    "description": "S3 bucket to upload the screenshot or thumbnail (required for S3)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_file",
+                    "description": "file name to use (for S3 only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_headers",
+                    "description": "list of headers to add to the S3 object (for S3 only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "ea17e1d760a001d3c4434ff5368922a5",
+            "name": "Get the batch status",
+            "url": "httpsapi.browshot.com\/api\/v1\/batch\/info",
+            "description": "Get the status of a batch requested through the API or through the dashboard.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "batch ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "494fa24a825d9e31835b542fea73187e",
+            "name": "Get information about a browser",
+            "url": "httpsapi.browshot.com\/api\/v1\/browser\/info",
+            "description": "Get information about a browser.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "batch ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "0ac2f15457d16f07ae55651b476d8ee8",
+            "name": "Get all browsers",
+            "url": "httpsapi.browshot.com\/api\/v1\/browser\/list",
+            "description": "Get all browsers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "8d7905e7d809dceb8f3e3d3453c70523",
+            "name": "Get information about an instance",
+            "url": "httpsapi.browshot.com\/api\/v1\/instance\/info",
+            "description": "Get information about an instance.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "batch ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "65d178f8886554056bc2278475ba5b7f",
+            "name": "Get all instances",
+            "url": "httpsapi.browshot.com\/api\/v1\/instance\/list",
+            "description": "Get all instances.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "c4f3eb7bb03203b4030dd22aad9a4a69",
+            "name": "Request a screenshot",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/create",
+            "description": "Screenshots requests to private and shared instances require a positive balance.\n\n*IMPORTANT*: Remember that you can only do 100 free screenshots per month. To used a premium instance, use instance_id=65 for example.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "url",
+                    "description": "URL of the page to get a screenshot for",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "instance_id",
+                    "description": "instance ID to use",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "size",
+                    "description": "screenshot size - \"screen\" (default) or \"page\"",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cache",
+                    "description": "use a previous screenshot (same URL, same instance) if it was done within <cache_value> seconds. The default value is 24hours. Specify cache=0 if you want a new screenshot.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "delay",
+                    "description": "number of seconds to wait after the page has loaded. This is used to let JavaScript run longer before taking the screenshot. Use delay=0 to take screenshots faster.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "flash_delay",
+                    "description": "number of seconds to wait after the page has loaded if Flash elements are present. Use flash_delay=0 to take screenshots faster.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "screen_width",
+                    "description": "width of the browser window. For desktop browsers only.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "screen_height",
+                    "description": "height of the browser window. For desktop browsers only. (Note: full-page screenshots can have a height of up to 15,000px)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "priority",
+                    "description": "assign priority to the screenshot (for private instances only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "referer",
+                    "description": "use a custom referrer header - paid screenshots only",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "post_data",
+                    "description": "send a POST requests with post_data, useful for filling out forms - paid screenshots only",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cookie",
+                    "description": "set a cookie for the URL requested (see Custom POST Data, Referer and Cookie) Cookies should be separated by a ; - paid screenshots only",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "script",
+                    "description": "URL of javascript file to execute after the page load event",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "details",
+                    "description": "level of information returned",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "html",
+                    "description": "saves the HTML of the rendered page which can be retrieved by the API call screenshot\/html. This feature costs *1 credit* per screenshot.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_wait",
+                    "description": "maximum number of seconds to wait before triggering the PageLoad event. Note that delay will still be used. (default: 0 = disabled)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "headers",
+                    "description": "any custom HTTP headers. (Not supported with Internet Explorer)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "shots",
+                    "description": "take multiple screenshots of the same page. This costs 1 additional credit for every 2 additional screenshots.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "shot_interval",
+                    "description": "number of seconds between 2 screenshots",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting",
+                    "description": "hosting option - s3 or browshot",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_height",
+                    "description": "maximum height of the thumbnail to host",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_width",
+                    "description": "maximum height of the thumbnail to host",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_scale",
+                    "description": "scale of the thumbnail to host",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_bucket",
+                    "description": "S3 bucket to upload the screenshot or thumbnail (required for S3)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_file",
+                    "description": "file name to use (for S3 only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_headers",
+                    "description": "list of headers to add to the S3 object (for S3 only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "ce2415c26e5f5f89a90b98ac2ec9aa32",
+            "name": "Delete screenshot data",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/delete",
+            "description": "You can delete details of your screenshots to remove any confidential information.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "batch ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "data",
+                    "description": "data to remove. You can specify multiple of them (separated by a ,): *image* (image files), *url* (url requested), *metadata* (time added, time finished, post data, cookie and referer used for the screenshot), *all* (all data and files)\n",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "65d47bf9f353c1a388d850417dd098dd",
+            "name": "Host thumbnails on your own S3 account or on Browshot.",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/host",
+            "description": "You can host screenshots and thumbnails on your own S3 account or on Browshot.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "batch ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting",
+                    "description": "hosting option - s3 or browshot",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "width",
+                    "description": "width of the thumbnail",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "height",
+                    "description": "height of the thumbnail",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "scale",
+                    "description": "scale of the thumbnail",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "bucket",
+                    "description": "S3 bucket to upload the screenshot or thumbnail - required with hosting=s3",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "file",
+                    "description": "file name to use - optional, used with hosting=s3",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "headers",
+                    "description": "any custom HTTP headers. (Not supported with Internet Explorer)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "ed59474f1749f87ed3d37ec6d994dd6d",
+            "name": "Get the HTML code",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/html",
+            "description": "Retrieve the HTML code of the rendered page. This API call should be used when html=1 was specified in the screenshot request.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "batch ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "5e632514e6557a4a6cea0faae6e74ec5",
+            "name": "Query screenshot status",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/info",
+            "description": "Once a screenshot has been requested, its status must be checked until it is either \"error\" or \"finished\".",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "batch ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "details",
+                    "description": "level of information returned",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "e56a905d1a9122d1077200a8196aeec9",
+            "name": "Get information about screenshots",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/list",
+            "description": "Get information about the last 100 screenshots requested.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "limit",
+                    "description": "maximum number of screenshots' information to return",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "status",
+                    "description": "get list of screenshot in a given status (error, finished, in_process)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "21e796d2742f95cc7038dfaf40b28331",
+            "name": "Request multiple screenshots",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/multiple",
+            "description": "Request multiple screenshots in one API call. The API call accepts all the parameters supported by screenshot\/create.\nYou can specify up to 10 URLs and 10 instances for a total of 100 screenshots in one API call.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "url",
+                    "description": "URL of the page to get a screenshot for",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "instance_id",
+                    "description": "instance ID to use",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "size",
+                    "description": "screenshot size - \"screen\" (default) or \"page\"",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cache",
+                    "description": "use a previous screenshot (same URL, same instance) if it was done within <cache_value> seconds. The default value is 24hours. Specify cache=0 if you want a new screenshot.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "delay",
+                    "description": "number of seconds to wait after the page has loaded. This is used to let JavaScript run longer before taking the screenshot. Use delay=0 to take screenshots faster.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "flash_delay",
+                    "description": "number of seconds to wait after the page has loaded if Flash elements are present. Use flash_delay=0 to take screenshots faster.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "screen_width",
+                    "description": "width of the browser window. For desktop browsers only.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "screen_height",
+                    "description": "height of the browser window. For desktop browsers only. (Note: full-page screenshots can have a height of up to 15,000px)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "priority",
+                    "description": "assign priority to the screenshot (for private instances only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "referer",
+                    "description": "use a custom referrer header - paid screenshots only",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "post_data",
+                    "description": "send a POST requests with post_data, useful for filling out forms - paid screenshots only",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "cookie",
+                    "description": "set a cookie for the URL requested (see Custom POST Data, Referer and Cookie) Cookies should be separated by a ; - paid screenshots only",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "script",
+                    "description": "URL of javascript file to execute after the page load event",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "details",
+                    "description": "level of information returned",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "html",
+                    "description": "saves the HTML of the rendered page which can be retrieved by the API call screenshot\/html. This feature costs *1 credit* per screenshot.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "max_wait",
+                    "description": "maximum number of seconds to wait before triggering the PageLoad event. Note that delay will still be used. (default: 0 = disabled)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "headers",
+                    "description": "any custom HTTP headers. (Not supported with Internet Explorer)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting",
+                    "description": "hosting option - s3 or browshot",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_height",
+                    "description": "maximum height of the thumbnail to host",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_width",
+                    "description": "maximum height of the thumbnail to host",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_scale",
+                    "description": "scale of the thumbnail to host",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_bucket",
+                    "description": "S3 bucket to upload the screenshot or thumbnail (required for S3)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_file",
+                    "description": "file name to use (for S3 only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "hosting_headers",
+                    "description": "list of headers to add to the S3 object (for S3 only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "6570cb27d532bc45bce9b7167c500361",
+            "name": "Search for screenshots",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/search",
+            "description": "Search for screenshots of a specific URL.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "url",
+                    "description": "URL of the page to get a screenshot for",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "maximum number of screenshots' information to return",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "status",
+                    "description": "get list of screenshot in a given status (error, finished, in_process)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "dd3ed20b828c5c14b0e0347fd909ea92",
+            "name": "Share a screenshot",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/share",
+            "description": "You can make your screenshots public, add notes, and share it with your friends and colleagues. Only screenshots which are successfully completed can be shared.n the thumbnail. You can take a 1024x768 screenshot, crop it to 768x768, and get it scaled down to 300x300.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "batch ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "note",
+                    "description": "note to add on the sharing page",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        },
+        {
+            "id": "1991b8acdb92d9241f236b591e4238d1",
+            "name": "Retrieve a thumbnail image",
+            "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/thumbnail",
+            "description": "Unlike the other API calls, this API sends back the thumbnail as a PNG file, not JSON. The HTTP response code indicates whether the screenshot was successful (200), or incomplete (404) or failed (404). If the screenshot failed or is not finished, a default image \"Not found\" is sent.\n\nYou can crop your screenshots. The crop is done first, then the thumbnail. You can take a 1024x768 screenshot, crop it to 768x768, and get it scaled down to 300x300.\n",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "id",
+                    "description": "batch ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "width",
+                    "description": "width of the thumbnail",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "height",
+                    "description": "height of the thumbnail",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "scale",
+                    "description": "scale of the thumbnail",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "zoom",
+                    "description": "zoom 1 to 100 percent",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "ratio",
+                    "description": "Use fit to keep the original page ration, and fill to get a thumbnail for the exact width and height.  specified. If you provide both width and height, you need to specify the ratio: fit to keep the original width\/height ratio (the thumbnail might be smaller than the specified width and height), or fill to crop the image if necessary.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "left",
+                    "description": "left edge of the area to be cropped",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "right",
+                    "description": "right edge of the area to be cropped",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "top",
+                    "description": "top edge of the area to be cropped",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "bottom",
+                    "description": "bottom edge of the area to be cropped",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "format",
+                    "description": "image as PNG or JPEG",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "shot",
+                    "description": "get the second or third screenshot if multiple screenshots were requested",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "quality",
+                    "description": "JPEG quality factor (for JPEG thumbnails only)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "rawModeData": ""
+        }
+    ]
+}
