@@ -1,5 +1,5 @@
 {
-    "id": "1102c340609cb881e08b6e50be693ab7",
+    "id": "bdd64405cb8e0ed87cf31d34bc44307e",
     "name": "Browshot",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "da273d7e372f3c7f86ffee2eaf6f1426",
+            "id": "b3c0e32579afb30b99d41daaa88f5385",
             "name": "Get information about your account",
             "url": "httpsapi.browshot.com\/api\/v1\/account\/info",
             "description": "Get information about your account.",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "ae11ba521e0bde4afd2ce1566ec44561",
+            "id": "a48b9242d85e4c3b47e4cf53b29b06b4",
             "name": "Requests thousands of screenshtos at once",
             "url": "httpsapi.browshot.com\/api\/v1\/batch\/ceate",
             "description": "Get hundreds or thousands of screenshots from a text file. You can use this API call or the dashboard. Unlike the other API calls, you must issue a POST request with the Content-Type \"multipart\/form-data\" in order to upload the text file. The text file must contain the list of URLs to request, 1 URL per line. Failed screenshots will be tried up to 3 times before giving up.\n",
@@ -250,11 +250,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "ea17e1d760a001d3c4434ff5368922a5",
+            "id": "f49e116b4bb24a97784661e8c35a99d9",
             "name": "Get the batch status",
             "url": "httpsapi.browshot.com\/api\/v1\/batch\/info",
             "description": "Get the status of a batch requested through the API or through the dashboard.\n",
@@ -281,11 +281,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "494fa24a825d9e31835b542fea73187e",
+            "id": "d3aff9907918ee800dcb518af7d2d823",
             "name": "Get information about a browser",
             "url": "httpsapi.browshot.com\/api\/v1\/browser\/info",
             "description": "Get information about a browser.",
@@ -312,11 +312,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "0ac2f15457d16f07ae55651b476d8ee8",
+            "id": "9bf208e098d2321aee9684651aa06ed0",
             "name": "Get all browsers",
             "url": "httpsapi.browshot.com\/api\/v1\/browser\/list",
             "description": "Get all browsers.",
@@ -335,11 +335,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "8d7905e7d809dceb8f3e3d3453c70523",
+            "id": "0b5c261ade6b78f39a8bb315fa29a141",
             "name": "Get information about an instance",
             "url": "httpsapi.browshot.com\/api\/v1\/instance\/info",
             "description": "Get information about an instance.",
@@ -366,11 +366,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "65d178f8886554056bc2278475ba5b7f",
+            "id": "cba8b0145587be3b2b26a98699f5f17b",
             "name": "Get all instances",
             "url": "httpsapi.browshot.com\/api\/v1\/instance\/list",
             "description": "Get all instances.",
@@ -389,11 +389,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "c4f3eb7bb03203b4030dd22aad9a4a69",
+            "id": "90da0d11ce09077178635949e3ded56f",
             "name": "Request a screenshot",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/create",
             "description": "Screenshots requests to private and shared instances require a positive balance.\n\n*IMPORTANT*: Remember that you can only do 100 free screenshots per month. To used a premium instance, use instance_id=65 for example.\n",
@@ -595,11 +595,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "ce2415c26e5f5f89a90b98ac2ec9aa32",
+            "id": "c5e5fb29eb67d069538f265556b7f6a9",
             "name": "Delete screenshot data",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/delete",
             "description": "You can delete details of your screenshots to remove any confidential information.\n",
@@ -633,11 +633,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "65d47bf9f353c1a388d850417dd098dd",
+            "id": "63eceb6a52ff22d2ab4e9b2f695d405c",
             "name": "Host thumbnails on your own S3 account or on Browshot.",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/host",
             "description": "You can host screenshots and thumbnails on your own S3 account or on Browshot.",
@@ -713,11 +713,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "ed59474f1749f87ed3d37ec6d994dd6d",
+            "id": "77b4ae239c1dd0d370a4896fa9ecfb6e",
             "name": "Get the HTML code",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/html",
             "description": "Retrieve the HTML code of the rendered page. This API call should be used when html=1 was specified in the screenshot request.\n",
@@ -744,11 +744,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "5e632514e6557a4a6cea0faae6e74ec5",
+            "id": "0c1624a051af021d151c748fada65d2a",
             "name": "Query screenshot status",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/info",
             "description": "Once a screenshot has been requested, its status must be checked until it is either \"error\" or \"finished\".",
@@ -782,11 +782,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "e56a905d1a9122d1077200a8196aeec9",
+            "id": "9e2fe48ab6bd60856b2a1c7229e5928a",
             "name": "Get information about screenshots",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/list",
             "description": "Get information about the last 100 screenshots requested.",
@@ -820,11 +820,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "21e796d2742f95cc7038dfaf40b28331",
+            "id": "97d4c2ffe0aff923ac5f5ea70df34fd6",
             "name": "Request multiple screenshots",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/multiple",
             "description": "Request multiple screenshots in one API call. The API call accepts all the parameters supported by screenshot\/create.\nYou can specify up to 10 URLs and 10 instances for a total of 100 screenshots in one API call.\n",
@@ -1012,11 +1012,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "6570cb27d532bc45bce9b7167c500361",
+            "id": "09bbbbb21554b340115c874ae5d57554",
             "name": "Search for screenshots",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/search",
             "description": "Search for screenshots of a specific URL.",
@@ -1057,11 +1057,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "dd3ed20b828c5c14b0e0347fd909ea92",
+            "id": "b4faa04d3580dc006d3e9f2867db1b67",
             "name": "Share a screenshot",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/share",
             "description": "You can make your screenshots public, add notes, and share it with your friends and colleagues. Only screenshots which are successfully completed can be shared.n the thumbnail. You can take a 1024x768 screenshot, crop it to 768x768, and get it scaled down to 300x300.\n",
@@ -1095,11 +1095,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         },
         {
-            "id": "1991b8acdb92d9241f236b591e4238d1",
+            "id": "260dd415e70038919d7ab970baa2c869",
             "name": "Retrieve a thumbnail image",
             "url": "httpsapi.browshot.com\/api\/v1\/screenshot\/thumbnail",
             "description": "Unlike the other API calls, this API sends back the thumbnail as a PNG file, not JSON. The HTTP response code indicates whether the screenshot was successful (200), or incomplete (404) or failed (404). If the screenshot failed or is not finished, a default image \"Not found\" is sent.\n\nYou can crop your screenshots. The crop is done first, then the thumbnail. You can take a 1024x768 screenshot, crop it to 768x768, and get it scaled down to 300x300.\n",
@@ -1210,7 +1210,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "1102c340609cb881e08b6e50be693ab7",
+            "collectionId": "bdd64405cb8e0ed87cf31d34bc44307e",
             "rawModeData": ""
         }
     ]
