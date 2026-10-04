@@ -39,7 +39,6 @@ apis:
   - name: Browshot
     description: "Easily make screenshots of web pages in any screen size, as any device"
     humanURL: https://browshot.com/api/documentation
-    baseURL: https://browshot.com/api/documentation
     tags:
       - Development
     properties:
